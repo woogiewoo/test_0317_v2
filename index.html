@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: lightyellow;
+            transition: all 1s;
+        }
+        .bgcolor--blue{
+            background-color: lightblue;
+        }        
+
+        .bgcolor--gray{
+            background-color: lightgray;
+        }
+
+        .btns{
+            position: relative;
+            top: 60px;
+            width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="btns">
+        <button class="btn_toggle">배경색상변경_토글버튼</button>
+        <button class="btn--reset">배경색상_리셋</button>
+        <button class="btn--bggray">배경색상변경_그레이</button>
+    </div>
+    
+
+    <script>
+        const btnToggle = document.querySelector('.btn_toggle'); /* 바로 위에 있는 버튼 클래스 불러오기 */ /* 변수 지정이유는 다른 곳에서도 계속 사용하기 위해서 */
+        btnToggle.addEventListener('click', function() { /* addEventListener('이벤트', 함수) */ /* 함수 = 명령문을 여러개로 묶어줄 때 */ /* 'click' 했을 때 함수를 실행해 ! */
+            document.body.classList.toggle('bgcolor--blue'); /* 클래스 리스트 자체가 클래스를 불러오므로, 여기서는 클래스도 . 붙이지 않는다 */
+        });
+        /* 최상위 문서에서 > 바디에 > 클래스 리스트 명령할거야 > 그중에 토글명령 할거야 > ()에 있는거 껏다 켰다 해줘 */
+
+        const btnReset = document.querySelector('.btn--reset');        
+        btnReset.addEventListener('click', function() {
+            document.body.classList.remove('bgcolor--blue');
+            document.body.classList.remove('bgcolor--gray');
+        });
+
+        const btnBgGray = document.querySelector('.btn--bggray');
+        btnBgGray.addEventListener('click', function() {
+            document.body.classList.add('bgcolor--gray');
+        });
+
+
+        /* const input = prompt('message', '_default');
+        alert(input); */
+
+    </script>
+
+    
+    
+</body>
+</html>
